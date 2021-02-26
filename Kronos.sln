@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KronosAPI", "KronosAPI\KronosAPI.csproj", "{862D87C9-2123-460F-9A91-8F5E4F4DDD47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{862D87C9-2123-460F-9A91-8F5E4F4DDD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862D87C9-2123-460F-9A91-8F5E4F4DDD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862D87C9-2123-460F-9A91-8F5E4F4DDD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862D87C9-2123-460F-9A91-8F5E4F4DDD47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6321131D-46BA-418C-AE4E-7249940D6B46}
+	EndGlobalSection
+EndGlobal
