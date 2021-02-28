@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KronosAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KronosAPI.Context
 {

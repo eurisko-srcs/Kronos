@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace KronosAPI.Models
 {
     // Model for usuario
     // property names must be the same as the table fields names
+    // [DataContract] pour 
     public class Usuario
     {
         // The [Key] keyword indicates that tis property is the primary key
         [Key]
+        // [DataMember(Name = "id")]
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellidos { get; set; }

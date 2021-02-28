@@ -77,7 +77,8 @@ namespace KronosAPI.Controllers
                     return NotFound();
             }
 
-            return NoContent();
+            //return NoContent();
+            return CreatedAtRoute("GetUsuario", new { id = usuario.id }, usuario);
         }
 
         // POST: api/Usuarios
