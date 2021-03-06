@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KronosAPI.Models;
-using KronosAPI.Context;
+using KronosAPI.Data;
 
 namespace KronosAPI.Controllers
 {
@@ -77,8 +77,8 @@ namespace KronosAPI.Controllers
                     return NotFound();
             }
 
-            //return NoContent();
-            return CreatedAtRoute("GetUsuario", new { id = usuario.id }, usuario);
+            return NoContent();
+            //return CreatedAtRoute("GetUsuario", new { id = usuario.id }, usuario);
         }
 
         // POST: api/Usuarios

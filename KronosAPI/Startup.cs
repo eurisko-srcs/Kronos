@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using KronosAPI.Data;
 
 namespace KronosAPI
 {
@@ -21,8 +22,12 @@ namespace KronosAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddDbContext<UsuarioContext>(options => options.UseInMemoryDatabase("TodoList"));
-            services.AddDbContext<Context.UsuarioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connexion")));
+            services.AddDbContext<UsuarioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connexion")));
+            services.AddDbContext<LoginContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Connexion")));
             services.AddControllers();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

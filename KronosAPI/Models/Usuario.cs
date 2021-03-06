@@ -12,6 +12,11 @@ namespace KronosAPI.Models
     // [DataContract] pour 
     public class Usuario
     {
+
+        Usuario()
+        {
+            fechaRegistro = DateTime.Now;
+        }
         // The [Key] keyword indicates that tis property is the primary key
         [Key]
         // [DataMember(Name = "id")]

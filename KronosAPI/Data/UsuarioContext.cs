@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KronosAPI.Models;
 
-namespace KronosAPI.Context
+namespace KronosAPI.Data
 {
     public class UsuarioContext:DbContext
     {
