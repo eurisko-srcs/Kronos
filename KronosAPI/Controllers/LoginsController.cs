@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KronosAPI.Data;
 using KronosAPI.Models;
+using System.Data.SqlClient;
+using DevExpress.Data.ODataLinq.Helpers;
 
 namespace KronosAPI.Controllers
 {
@@ -26,14 +28,33 @@ namespace KronosAPI.Controllers
         public async Task<ActionResult<IEnumerable<Login>>> GetLogin()
         {
             return await _context.Login.ToListAsync();
+
+            //return _context.Login.Where(x => x.idUsuario == idUsuario).ToList(); // FromSqlRaw("Select * from login where idUsuario = 1").ToList();
         }
 
-        // GET: api/Logins/5
+        // GET: api/Logins/logtype/5
+        [HttpGet("{tipoLog}", Name = "GetTypeLogLogin")]
+        [Route("logtype/{tipoLog}")]
+        public async Task<ActionResult<IEnumerable<Login>>> GetLogTypeLogin(int tipoLog)
+        {
+            return await _context.Login.Where(x => x.tipoLog == tipoLog).ToListAsync();
+        }
+
+        // GET: api/Logins/user/5
+        [HttpGet("{idUsuario}", Name = "GetUserLogin")]
+        [Route("user/{idUsuario}")]
+        public async Task<ActionResult<IEnumerable<Login>>> GetUserLogin( int idUsuario)
+        {
+            return await _context.Login.Where(x => x.idUsuario == idUsuario).ToListAsync();
+        }
+
+        // GET: api/Logins/id/5
         [HttpGet("{id}", Name = "GetLogin")]
+        [Route("id/{id}")]
         public async Task<ActionResult<Login>> GetLogin(int id)
         {
             var login = await _context.Login.FindAsync(id);
-
+            //var login = await _context.Login.FirstOrDefaultAsync(p => p.idUsuario == id);
             if (login == null)
             {
                 return NotFound();

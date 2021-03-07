@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using KronosAPI.Data;
+using DevExpress.Xpo;
 
 namespace KronosAPI
 {
@@ -21,12 +22,12 @@ namespace KronosAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<UsuarioContext>(options => options.UseInMemoryDatabase("TodoList"));
-            services.AddDbContext<UsuarioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connexion")));
-            services.AddDbContext<LoginContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Connexion")));
+            services.AddDbContext<UsuarioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("KronosConnetion")));
+            services.AddDbContext<LoginContext>(options => options.UseSqlServer(Configuration.GetConnectionString("KronosConnetion")));
             services.AddControllers();
 
+            // Adding the repositories
+            services.AddScoped<ILoginRepo, LoginRepo>();
 
         }
 

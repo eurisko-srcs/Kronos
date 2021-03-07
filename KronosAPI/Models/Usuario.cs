@@ -15,6 +15,7 @@ namespace KronosAPI.Models
 
         Usuario()
         {
+            // Initilizing the DateTime to avoid convertion error
             fechaRegistro = DateTime.Now;
         }
         // The [Key] keyword indicates that tis property is the primary key
